@@ -8,6 +8,7 @@ export class App extends Component {
     searchText: "",
     searchResult: [],
     message: "",
+    genresSelected: {},
   };
 
   searchHandler = (e) => {
@@ -28,6 +29,10 @@ export class App extends Component {
     }
   };
 
+  genresHandler = () => {
+    return 0;
+  };
+
   render() {
     return (
       <div>
@@ -39,7 +44,7 @@ export class App extends Component {
           searchReq={this.searchReq}
         />
         <p>
-          <Genres />
+          <Genres genresHandler={this.genresHandler} />
           Powered by{" "}
           <img
             style={{ width: "150px" }}
