@@ -1,0 +1,22 @@
+{
+  "result": [
+    {
+      "id": 1,
+      "name": "Tom Hanks",
+      "upcomingMovies":[
+        {
+          "movieId": "765",
+          "movieName": "Tom Hank's New Comedy Movie",
+          "year": "2022",
+          "genre": "Comedy"
+        },
+        {
+          "movieId": "23426564",
+          "movieName": "Tom Hank's New Drama Movie",
+          "year": "2023",
+          "genre": "Drama"
+        }
+      ]
+    }
+  ]
+}

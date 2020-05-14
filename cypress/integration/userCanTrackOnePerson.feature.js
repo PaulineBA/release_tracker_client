@@ -18,14 +18,16 @@ describe("User can track one person", () => {
         cy.contains("Tom Hank's New Comedy Movie");
         cy.contains("Tracked people: Tom Hanks");
         cy.contains("Tracked genres: Comedy");
+        cy.contains("2022")
       });
     });
 
     it("User can see upcoming releases second result", () => {
-      cy.get("#release-item-1").within(() => {
+      cy.get("#release-item-2").within(() => {
         cy.contains("Tom Hank's New Thriller Movie");
         cy.contains("Tracked people: Tom Hanks");
         cy.contains("Tracked genres: Thriller");
+        cy.contains("2021")
       });
     });
 
@@ -55,14 +57,16 @@ describe("User can track one person", () => {
         cy.contains("Tom Hank's New Comedy Movie");
         cy.contains("Tracked people: Tom Hanks");
         cy.contains("Tracked genres: Comedy");
+        cy.contains("2022")
       });
     });
 
     it("User can see upcoming releases second result", () => {
-      cy.get("#release-item-1").within(() => {
+      cy.get("#release-item-2").within(() => {
         cy.contains("Tom Hank's New Drama Movie");
         cy.contains("Tracked people: Tom Hanks");
         cy.contains("Tracked genres: Drama");
+        cy.contains("2023")
       });
     });
 
