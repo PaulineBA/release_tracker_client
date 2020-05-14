@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Search from "./components/Search";
+import Genres from "./components/Genres";
 
 export class App extends Component {
   state = {
@@ -38,6 +39,7 @@ export class App extends Component {
           searchReq={this.searchReq}
         />
         <p>
+          <Genres />
           Powered by{" "}
           <img
             style={{ width: "150px" }}
