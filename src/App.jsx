@@ -8,7 +8,7 @@ export class App extends Component {
     searchText: "",
     searchResult: [],
     message: "",
-    genresSelected: {},
+    genresSelected: ["thriller", "drama", "comedy"],
   };
 
   searchHandler = (e) => {
@@ -19,7 +19,10 @@ export class App extends Component {
     e.preventDefault();
     try {
       const response = await axios.get("/api/v1/search", {
-        params: { searchText: this.state.searchText },
+        params: {
+          searchText: this.state.searchText,
+          genres: this.state.genresSelected,
+        },
       });
       response.data.message !== "" &&
         this.setState({ message: response.data.message });
@@ -29,8 +32,19 @@ export class App extends Component {
     }
   };
 
-  genresHandler = () => {
-    return 0;
+  genresHandler = (e) => {
+    let selectedGenre = e.target.name;
+    if (this.state.genresSelected.includes(selectedGenre)) {
+      this.setState({
+        genresSelected: this.state.genresSelected.filter(
+          (element) => element !== selectedGenre
+        ),
+      });
+    } else {
+      this.setState({
+        genresSelected: [...this.state.genresSelected, selectedGenre],
+      });
+    }
   };
 
   render() {
@@ -45,7 +59,7 @@ export class App extends Component {
         />
         <p>
           <Genres genresHandler={this.genresHandler} />
-          Powered by{" "}
+          Powered by
           <img
             style={{ width: "150px" }}
             src={require("./images/apilogo.svg")}
